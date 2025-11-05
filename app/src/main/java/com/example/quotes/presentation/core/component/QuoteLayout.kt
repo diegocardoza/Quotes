@@ -1,4 +1,4 @@
-package com.example.quotes.presentation.quotes.component
+package com.example.quotes.presentation.core.component
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -15,6 +15,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.quotes.presentation.core.ui.theme.LocalAppThemeColors
 import com.example.quotes.presentation.quotes.model.QuoteItem
 
 
@@ -26,6 +27,7 @@ fun QuoteLayout(
     modifier: Modifier = Modifier,
     quoteItem: QuoteItem
 ) {
+    val appThemeColors = LocalAppThemeColors.current
     Column(
         modifier = modifier.padding(8.dp),
         verticalArrangement = Arrangement.Center,
@@ -36,7 +38,8 @@ fun QuoteLayout(
             text = quoteItem.quote,
             fontSize = 22.sp,
             textAlign = TextAlign.Center,
-            fontWeight = FontWeight.SemiBold
+            fontWeight = FontWeight.SemiBold,
+            color = appThemeColors.text
         )
         Spacer(modifier = Modifier.size(20.dp))
         Text(
@@ -45,7 +48,7 @@ fun QuoteLayout(
             fontSize = 32.sp,
             fontWeight = FontWeight.Bold,
             textAlign = TextAlign.Center,
-            color = MaterialTheme.colorScheme.primary
+            color = appThemeColors.primary
         )
     }
 }

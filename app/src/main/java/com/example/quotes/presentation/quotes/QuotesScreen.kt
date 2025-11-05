@@ -8,7 +8,6 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -28,11 +27,12 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.example.quotes.R
 import com.example.quotes.domain.model.QuoteModel
+import com.example.quotes.presentation.core.component.ErrorMessageLayout
+import com.example.quotes.presentation.core.component.LoadingIndicator
+import com.example.quotes.presentation.core.component.QuoteLayout
+import com.example.quotes.presentation.core.ui.theme.LocalAppThemeColors
 import com.example.quotes.presentation.core.ui.theme.QuotesTheme
 import com.example.quotes.presentation.quotes.model.mappers.toQuoteItem
-import com.example.quotes.presentation.quotes.component.ErrorMessageLayout
-import com.example.quotes.presentation.quotes.component.LoadingIndicator
-import com.example.quotes.presentation.quotes.component.QuoteLayout
 
 const val containerLayoutTag = "containerLayout"
 const val appNameLayoutTag = "appNameLayout"
@@ -61,14 +61,16 @@ fun QuotesScreen(
 ) {
     val context = LocalContext.current
     var totalDrag by remember { mutableFloatStateOf(0f) }
+    val appThemeColors = LocalAppThemeColors.current
     Scaffold(
-        modifier = Modifier.fillMaxSize()
+        modifier = Modifier.fillMaxSize(),
+        containerColor = appThemeColors.background
     ) { innerPadding ->
         Column(
             modifier = Modifier
                 .padding(innerPadding)
                 .fillMaxSize()
-                .background(MaterialTheme.colorScheme.background)
+                .background(appThemeColors.background)
                 .pointerInput(Unit) {
                     detectHorizontalDragGestures(
                         onDragStart = { totalDrag = 0f },
@@ -94,7 +96,8 @@ fun QuotesScreen(
                 Text(
                     text = context.getString(R.string.app_name),
                     fontSize = 36.sp,
-                    fontWeight = FontWeight.Black
+                    fontWeight = FontWeight.Black,
+                    color = appThemeColors.text
                 )
             }
             when {
@@ -125,7 +128,7 @@ fun QuotesScreen(
 @Preview(showBackground = true)
 @Composable
 private fun QuotesScreenLoadingStatePrev() {
-    QuotesTheme(dynamicColor = false) {
+    QuotesTheme {
         val loadingState = QuotesUiState(
             isLoading = true,
             isFetchError = false,
@@ -143,7 +146,7 @@ private fun QuotesScreenLoadingStatePrev() {
 @Preview(showBackground = true)
 @Composable
 private fun QuotesScreenErrorStatePrev() {
-    QuotesTheme(dynamicColor = false) {
+    QuotesTheme {
         val errorState = QuotesUiState(
             isLoading = false,
             isFetchError = true,
@@ -161,7 +164,7 @@ private fun QuotesScreenErrorStatePrev() {
 @Preview(showBackground = true)
 @Composable
 private fun QuotesScreenSuccessStatePrev() {
-    QuotesTheme(dynamicColor = false) {
+    QuotesTheme {
         val successState = QuotesUiState(
             isLoading = false,
             isFetchError = false,

@@ -16,7 +16,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            QuotesTheme(dynamicColor = false) {
+            QuotesTheme {
                 QuotesScreen()
             }
         }

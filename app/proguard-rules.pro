@@ -26,22 +26,6 @@
 -dontwarn org.openjsse.javax.net.ssl.SSLSocket
 -dontwarn org.openjsse.net.ssl.OpenJSSE
 
-## Mantener las interfaces DAO (Data Access Objects)
-#-keep @androidx.room.Dao class * { *; }
-#
-## Mantener las clases anotadas con @Entity
-#-keep @androidx.room.Entity class * { *; }
-#
-## Mantener las clases marcadas con @Database
-#-keep @androidx.room.Database class * { *; }
-#
-## Mantener las clases marcadas con @TypeConverters
-#-keep @androidx.room.TypeConverters class * { *; }
-#
-## Mantener las anotaciones utilizadas por Room
-#-keepattributes Signature
-#-keepattributes RuntimeVisibleAnnotations
-
 ## Mantener clases serializadas por Gson
 #-keep class com.google.gson.** { *; }
 -keep class com.example.quotes.data.network.model.** { *; }

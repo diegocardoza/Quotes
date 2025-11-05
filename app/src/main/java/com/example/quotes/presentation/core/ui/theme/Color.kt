@@ -2,10 +2,14 @@ package com.example.quotes.presentation.core.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
-val lightColorPrimary = Color(0xFFFF914D)
-val lightColorBackground = Color(0xFFFAF3E0)
-val lightColorOnBackground = Color(0xFF2C2C2C)
+val primaryColor = Color(0xFFFF914D)
 
-val darkColorPrimary = Color(0xFFFF914D)
-val darkColorBackground = Color(0xFF242424)
-val darkColorOnBackground = Color(0xFFEDEDED)
+val lightTextColor = Color.Black
+val lightBackgroundColor = Color(0xFFFAF3E0)
+val lightOnBackgroundColor = Color(0xFF2C2C2C)
+
+val darkTextColor = Color.White
+val darkBackgroundColor = Color(0xFF242424)
+val darkOnBackgroundColor = Color(0xFFEDEDED)
+
+val errorColor = Color.Red
