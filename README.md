@@ -1,5 +1,11 @@
 # 📱 Quotes
 
+<div align="center">
+  <img src="screenshots/screenshot_1.png" width="30%" style="margin: 0 10px;" />
+  <img src="screenshots/screenshot_2.png" width="30%" style="margin: 0 10px;" />
+  <img src="screenshots/screenshot_3.png" width="30%" style="margin: 0 10px;" />
+</div>
+
 [![Kotlin](https://img.shields.io/badge/Kotlin-2.0.0-purple.svg)](https://kotlinlang.org)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
