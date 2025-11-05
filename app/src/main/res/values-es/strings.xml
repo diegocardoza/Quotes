@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="fetch_error_message">Ocurrió un error al obtener las citas</string>
+</resources>

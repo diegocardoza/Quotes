@@ -1,0 +1,17 @@
+[
+  {
+    "author": "Desarrollador Ágil",
+    "id": 1,
+    "quote": "El código limpio es la mejor documentación."
+  },
+  {
+    "author": "Guru del Testing",
+    "id": 2,
+    "quote": "Si no está testeado, está roto."
+  },
+  {
+    "author": "Filósofo del Debugging",
+    "id": 3,
+    "quote": "Un error bien depurado es un paso hacia la sabiduría."
+  }
+]
